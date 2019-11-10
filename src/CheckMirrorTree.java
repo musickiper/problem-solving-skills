@@ -46,13 +46,13 @@ class BinaryTree {
     }
     for (int i = 0; i < left.size(); i++) {
       // When one of the children nodes is null
-      if (left.get(i) == null || right.get(i) == null) {
+      if (left.get(i) == null || right.get(left.size() - i - 1) == null) {
         if (left.get(i) != right.get(i)) {
           return false;
         }
       }
       // When both of the children nodes are not null
-      if (left.get(i).value != right.get(i).value) {
+      if (left.get(i).value != right.get(left.size() - i - 1).value) {
         return false;
       }
     }
